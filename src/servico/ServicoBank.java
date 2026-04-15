@@ -4,7 +4,7 @@ import controle.InterfaceBank;
 import model.*;
 
 
-public class ServicoBank implements InterfaceBank {
+public class  ServicoBank implements InterfaceBank {
     public Pessoa user;
     private BancoDados banco = new BancoDados();
     

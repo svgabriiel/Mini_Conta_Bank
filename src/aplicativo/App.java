@@ -23,12 +23,26 @@ public class App extends JFrame {
     // getContentPane().setBackground(new Color(0, 0, 0));  COR FUNDO
     setLayout(new GridLayout(6, 1));
 
-    
     telaInicio();
     
     setVisible(true);
 
-}  
+}
+private void telaMaisOpcoes(){
+    getContentPane().removeAll();
+    setLayout(new GridLayout(10,3));
+    JLabel titulo = new JLabel("Mais Opções");
+
+    JButton back = new JButton("Voltar");
+
+    back.addActionListener(l-> telaApp());
+
+    add(titulo);
+    add(back);
+    revalidate();
+    repaint();
+}
+
       private void telaEmprestimos(){
         getContentPane().removeAll();
         setLayout(new GridLayout(10,1));
@@ -260,7 +274,7 @@ public class App extends JFrame {
         JButton emprestimo = new JButton("Emprestimos");
         JButton opition = new JButton("Mais Opções");
 
-        opition.setLocation(getMousePosition());
+        opition.addActionListener(l-> telaMaisOpcoes());
         deposito.addActionListener( l -> deposito());
         pix.addActionListener(l -> telaPrincipalPix());
         sair.addActionListener(l -> {serv.user = null; telaInicio();});
