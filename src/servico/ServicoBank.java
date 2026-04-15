@@ -58,10 +58,10 @@ public class  ServicoBank implements InterfaceBank {
         
     }
     @Override
-    public boolean  setProfision(String profision, double salary){
-            if(profision == null || salary <= 0) return false;
+    public boolean  setProfision(String profission, double salary){
+            if(profission == null || salary <= 0) return false;
 
-            user.setProfession(profision);
+            user.setProfession(profission);
             user.setSalary(salary);
             banco.atualizarDados(user);
             return true;

@@ -27,23 +27,71 @@ public class App extends JFrame {
     
     setVisible(true);
 
-}
-private void telaMaisOpcoes(){
+    }
+
+    private void telaProfissao(){
+        getContentPane().removeAll();
+        setLayout(new GridLayout(10,3));
+        JLabel titulo = new JLabel("Aba Profissão");
+        JLabel msg = new JLabel(); msg.setHorizontalAlignment(JLabel.LEFT);
+        JTextField professionField = new JTextField(20);
+        JTextField salaryField = new JTextField(5);
+        JButton back = new JButton("Voltar");
+        JButton confirm = new JButton("Confirmar");
+
+
+        confirm.addActionListener(l->{
+            double salary = -10;
+            String profission = professionField.getText();
+            try{
+                salary = Double.parseDouble(salaryField.getText());
+            } catch (Exception e) {
+                msg.setText("ERRO");
+                msg.setForeground(Color.RED);
+                profission = null;
+            }
+
+            if(serv.setProfision(profission,salary)){
+                msg.setForeground(new Color(0, 100, 0));
+                msg.setText("SUCESSO!");
+            }
+        });
+
+
+        back.addActionListener(l-> telaApp());
+
+        add(titulo);
+        add(msg);
+        add(new JLabel("Profissão: "));
+        add(professionField);
+        add(new JLabel("Salário: "));
+        add(salaryField);
+        add(confirm);
+
+        add(back);
+        revalidate();
+        repaint();
+    }
+
+    private void telaMaisOpcoes(){
     getContentPane().removeAll();
     setLayout(new GridLayout(10,3));
     JLabel titulo = new JLabel("Mais Opções");
 
     JButton back = new JButton("Voltar");
+    JButton profission = new JButton("Profissão");
 
     back.addActionListener(l-> telaApp());
+    profission.addActionListener(l-> telaProfissao());
 
     add(titulo);
+    add(profission);
     add(back);
     revalidate();
     repaint();
-}
+    }
 
-      private void telaEmprestimos(){
+    private void telaEmprestimos(){
         getContentPane().removeAll();
         setLayout(new GridLayout(10,1));
 
