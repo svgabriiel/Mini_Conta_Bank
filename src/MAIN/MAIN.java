@@ -1,7 +1,6 @@
 package MAIN;
 import aplicativo.App;
 
-
 public class MAIN {
 
     
@@ -9,5 +8,7 @@ public class MAIN {
        
        new App();
     
+    
+
     }
 }

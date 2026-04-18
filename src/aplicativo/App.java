@@ -12,7 +12,7 @@ import servico.ServicoBank;
 
 public class App extends JFrame {
     
-    public ServicoBank serv = new ServicoBank();
+    private ServicoBank serv = new ServicoBank();
     private boolean logado;
 
     public App() {
@@ -32,7 +32,8 @@ public class App extends JFrame {
     private void telaProfissao(){
         getContentPane().removeAll();
         setLayout(new GridLayout(10,3));
-        JLabel titulo = new JLabel("Aba Profissão");
+        JLabel titulo = new JLabel("Profissão"); titulo.setHorizontalAlignment(JLabel.CENTER);
+        titulo.setForeground(Color.BLUE);
         JLabel msg = new JLabel(); msg.setHorizontalAlignment(JLabel.LEFT);
         JTextField professionField = new JTextField(20);
         JTextField salaryField = new JTextField(5);
@@ -58,7 +59,7 @@ public class App extends JFrame {
         });
 
 
-        back.addActionListener(l-> telaApp());
+        back.addActionListener(l-> telaMaisOpcoes());
 
         add(titulo);
         add(msg);
@@ -73,19 +74,45 @@ public class App extends JFrame {
         repaint();
     }
 
+    private void telaExtrato(){
+
+        getContentPane().removeAll();
+        setLayout(new GridLayout(10,3));
+        JLabel titulo = new JLabel("Extrato Bancário");
+        titulo.setHorizontalAlignment(JLabel.CENTER);
+        titulo.setForeground(Color.BLUE);
+
+        JButton back = new JButton("BACK");
+
+        back.addActionListener(l->telaMaisOpcoes());
+
+
+        add(titulo);
+        add(back);
+        revalidate();
+        repaint();
+    }
+
     private void telaMaisOpcoes(){
     getContentPane().removeAll();
     setLayout(new GridLayout(10,3));
     JLabel titulo = new JLabel("Mais Opções");
+    titulo.setHorizontalAlignment(JLabel.CENTER);
+    titulo.setForeground(Color.BLUE);
 
     JButton back = new JButton("Voltar");
     JButton profission = new JButton("Profissão");
+    JButton extrato = new JButton("Extrato");
 
     back.addActionListener(l-> telaApp());
     profission.addActionListener(l-> telaProfissao());
 
+    extrato.addActionListener(l -> telaExtrato());
+
+
     add(titulo);
     add(profission);
+    add(extrato);
     add(back);
     revalidate();
     repaint();

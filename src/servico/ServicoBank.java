@@ -1,6 +1,6 @@
-package servico;
-import dados.BancoDados;
+ package servico;
 import controle.InterfaceBank;
+import dados.BancoDados;
 import model.*;
 
 
@@ -58,10 +58,10 @@ public class  ServicoBank implements InterfaceBank {
         
     }
     @Override
-    public boolean  setProfision(String profission, double salary){
-            if(profission == null || salary <= 0) return false;
+    public boolean  setProfision(String profision, double salary){
+            if(profision == null || salary <= 0) return false;
 
-            user.setProfession(profission);
+            user.setProfession(profision);
             user.setSalary(salary);
             banco.atualizarDados(user);
             return true;
