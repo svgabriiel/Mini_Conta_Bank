@@ -551,7 +551,7 @@ public class App extends JFrame {
         else if(codERR == -2)
             msg.setText("Conta ja cadastrada!");
         else 
-            msg.setText("Conta N° "+(codERR+1));
+            msg.setText("Conta N° "+(codERR));
     });
     
     voltar.addActionListener(e -> telaInicio());

@@ -30,6 +30,16 @@ public class Pessoa{
         this.setConta(conta);
     
     }
+    public Pessoa( Pessoa user) {
+        this.setNome(user.getNome());
+        this.setIdade(user.getIdade());
+        this.setCpf(user.getCpf());
+        this.setLogado(true);
+        this.setSaldo(user.getSaldo());
+        this.setSenha(user.getSenha());
+        this.setConta(user.getConta());
+
+    }
     public void setParcelas_R$(double valor, int qtd) {
         for(int i = 0; i<qtd; i++)
             this.parcelas_R$.add(valor);

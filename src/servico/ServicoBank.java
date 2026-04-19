@@ -73,18 +73,14 @@ public class  ServicoBank implements InterfaceBank {
                 return -1;
             }
             
-            if(!buscaUser(cpf)){ 
-                for(int index = 0; index< banco.getLength();index++){
-                    if(banco.getLivre(index)){
-                        banco.setDados( new Pessoa(nome , cpf, idade, senha, index+1), index);
-                        return index;
-                        }
-                    }
+            if(!buscaUser(cpf)){
+                    int index = banco.getLength() +1;
+                    banco.setDados( new Pessoa(nome , cpf, idade, senha, index), index);
+                    return index;
                 }
                 
             else return -2;
 
-            return -1;
             
         }
     public void carregarUser(int conta){
