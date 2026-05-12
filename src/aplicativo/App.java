@@ -189,6 +189,7 @@ public class App extends JFrame {
                     msg1.setForeground(new Color(0, 100, 0));
                     msg1.setHorizontalAlignment(JLabel.LEFT);
                     realizar.setEnabled(false);
+                    solicitar.setEnabled(false);
                 }
                     
                 });

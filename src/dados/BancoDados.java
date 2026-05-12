@@ -19,7 +19,7 @@ public class BancoDados {
         return dados.size();
     }
     public void atualizarDados(Pessoa user){
-        dados.add(user.getConta()-1,user);
+        dados.set(user.getConta()-1,user);
     }
     public void apagarConta(int conta){
         dados.remove(conta-1);
